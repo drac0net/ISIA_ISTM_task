@@ -48,6 +48,20 @@ public class Matriz {
         return matrizResultante; 
     } 
 
+	public static Matriz invierteMatriz(Matriz a) { 
+		int i, j, filasA, columnasA; 
+		filasA = a.getDimension().height; 
+		columnasA = a.getDimension().width; 
+
+		Matriz matrizResultante = new Matriz(columnasA, filasA, false);
+		for (i = 0; i < filasA; i++) { 
+			for (j = 0; j < columnasA; j++) { 
+				matrizResultante.datos[i][j] = a.datos[j][i];
+			} 
+		}
+		return matrizResultante;
+	}	
+
     @Override
     public String toString(){
         String ret = "";
